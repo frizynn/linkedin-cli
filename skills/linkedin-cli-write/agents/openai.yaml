@@ -1,0 +1,7 @@
+interface:
+  display_name: "LinkedIn CLI Write"
+  short_description: "Run LinkedIn write actions"
+  default_prompt: "Use $linkedin-cli-write to publish a post, react, save, unsave, or comment with linkedin-cli while respecting auth and browser fallback limits."
+
+policy:
+  allow_implicit_invocation: true

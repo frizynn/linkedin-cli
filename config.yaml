@@ -1,0 +1,20 @@
+fetch:
+  count: 20
+
+filter:
+  enabled: false
+  mode: "recent"
+
+browser:
+  preferred: "chrome"
+  fallback_enabled: true
+  headless: true
+
+rate_limit:
+  request_delay: 1.25
+  max_retries: 3
+  retry_base_delay: 3.0
+  write_delay_min: 1.5
+  write_delay_max: 4.0
+  timeout: 20.0
+

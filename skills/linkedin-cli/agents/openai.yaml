@@ -1,0 +1,7 @@
+interface:
+  display_name: "LinkedIn CLI"
+  short_description: "Use LinkedIn from the terminal"
+  default_prompt: "Use $linkedin-cli to choose and run the right linkedin-cli command for feed, search, profiles, activities, or JSON export."
+
+policy:
+  allow_implicit_invocation: true

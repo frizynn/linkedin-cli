@@ -1,0 +1,35 @@
+name: Feature request
+description: Propose a new command, workflow, or improvement
+title: "[feature] "
+labels:
+  - enhancement
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      placeholder: Add a command to export the current feed to Markdown
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What workflow is blocked today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the command, flags, or behavior you want.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context

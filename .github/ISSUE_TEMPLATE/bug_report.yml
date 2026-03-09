@@ -1,0 +1,66 @@
+name: Bug report
+description: Report a reproducible problem in linkedin-cli
+title: "[bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug.
+
+        Do not include live cookies, session headers, HAR files, or screenshots with secrets.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: What broke?
+      placeholder: linkedin feed fails with a redirect loop even though auth-status is healthy
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      description: Paste the exact command you ran, with secrets removed.
+      placeholder: linkedin feed --max 5 --json
+    validations:
+      required: true
+  - type: dropdown
+    id: auth_mode
+    attributes:
+      label: Authentication mode
+      options:
+        - LINKEDIN_COOKIE_HEADER
+        - LINKEDIN_LI_AT + LINKEDIN_JSESSIONID
+        - Browser cookie extraction
+        - Browser fallback / Playwright
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include sanitized output from `linkedin auth-status` if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, install method, and any proxy or browser details.
+      placeholder: macOS 15, Python 3.12, uv tool install, Chrome cookie extraction
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: Anything else that helps reproduce the issue.

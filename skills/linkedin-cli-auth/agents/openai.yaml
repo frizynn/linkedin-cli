@@ -1,0 +1,7 @@
+interface:
+  display_name: "LinkedIn CLI Auth"
+  short_description: "Diagnose LinkedIn CLI auth"
+  default_prompt: "Use $linkedin-cli-auth to diagnose auth-status failures, cookie issues, browser extraction problems, or LinkedIn redirect loops."
+
+policy:
+  allow_implicit_invocation: true
