@@ -22,10 +22,10 @@ Run commands from the repository root when using `uv run` or `.venv/bin/linkedin
 ## Standard Workflow
 
 1. Verify the session first with `uv run linkedin auth-status`.
-2. Choose the narrowest read command that answers the request.
-3. Prefer `--json` when another tool or script will consume the output.
-4. Prefer `--output <file>` for `feed`, `search`, and `profile-posts` when the user wants an artifact on disk.
-5. Switch to `$linkedin-cli-auth` when the problem is mainly auth, cookies, browser extraction, proxying, or redirects.
+2. If auth-status reports redirects, authwall, checkpoint, or missing cookies, switch to `$linkedin-cli-auth` before proceeding.
+3. Choose the narrowest read command that answers the request.
+4. Prefer `--json` when another tool or script will consume the output.
+5. Prefer `--output <file>` for `feed`, `search`, and `profile-posts` when the user wants an artifact on disk.
 6. Switch to `$linkedin-cli-write` when the task is mainly posting, reacting, saving, unsaving, or commenting.
 
 ## Command Selection
