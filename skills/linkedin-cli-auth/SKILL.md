@@ -17,6 +17,8 @@ uv run linkedin auth-status
 
 Use that output as the source of truth before trying any other LinkedIn command.
 
+**Healthy session** shows `basic-probe=ok` and `voyager_me=ok:200`. **Failing session** shows redirects, `authwall`, `checkpoint`, or non-200 status codes — fix auth before retrying.
+
 ## Auth Resolution Order
 
 `linkedin-cli` resolves auth in this order:
@@ -26,6 +28,15 @@ Use that output as the source of truth before trying any other LinkedIn command.
 3. Browser cookie extraction from Chrome, Chromium, Brave, Edge, or Firefox
 
 Prefer the full cookie header over the minimal cookie pair whenever reads are unstable.
+
+```bash
+# Full cookie header (most reliable)
+export LINKEDIN_COOKIE_HEADER='li_at=...; JSESSIONID="ajax:..."; bcookie="..."; ...'
+
+# Minimal (less reliable)
+export LINKEDIN_LI_AT='AQ...'
+export LINKEDIN_JSESSIONID='"ajax:123456789"'
+```
 
 ## Operating Rules
 

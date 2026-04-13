@@ -25,6 +25,7 @@ uv run linkedin comment urn:li:activity:123 "great post"
 ## Operating Rules
 
 - Confirm the target activity identifier before sending a mutation.
+- After a write action, verify the result (e.g., fetch the activity or check for confirmation output) before reporting success.
 - Keep write volume conservative; do not automate repeated posting or engagement loops.
 - Prefer `connections` visibility unless the user explicitly requests `public`.
 - Use `$linkedin-cli-auth` immediately when writes fail because of session health, redirects, or missing cookies.
